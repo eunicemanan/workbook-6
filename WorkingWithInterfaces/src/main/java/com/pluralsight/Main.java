@@ -1,8 +1,10 @@
-package com.pluralsight;
+package com.pluralsight.program;
 
-import javax.sound.midi.SysexMessage;
+import com.pluralsight.model.Person;
+
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +16,17 @@ public class Main {
         al.add(new Person("Christopher", "Breaux", 37)); // Removed extra space
         al.add(new Person("Giveon", "Evans", 30));
         al.add(new Person("Tyson", "Ngo", 22));
+
+
+        String lastName = "Manan";
+        List<Person> matchingPeople = new ArrayList<>();
+        for (Person person : people) {
+
+            System.out.println(person);
+        }
+
+
+
 
         Collections.sort(al);
 
