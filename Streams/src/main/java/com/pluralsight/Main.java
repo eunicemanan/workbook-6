@@ -4,7 +4,8 @@ import com.pluralsight.model.Person;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Collections;
+import java.util.Comparator;
 public class Main {
     public static void main(String[] args) {
         List<Person> people = new ArrayList<>();
@@ -39,8 +40,17 @@ public class Main {
             totalAge += person.getAge();
         }
         double averageAge = (double) totalAge/ people.size();
-        System.out.println("\nAverage: " + averageAge);
+        System.out.println("\nAverage age: " + averageAge);
 
+        List<Integer> ages = new ArrayList<>();
+        for (Person person : people)
+            ages.add(person.getAge());
+
+        int oldestAge = Collections.max(ages);
+        int youngestAge = Collections.min(ages);
+
+        System.out.println(oldestAge);
+        System.out.println(youngestAge);
 
         String lastName = "Green";
         List<Person> matchingPeople = new ArrayList<>();
@@ -50,7 +60,6 @@ public class Main {
                 matchingPeople.add(person);
             }
         }
-
 
         for (Person person : matchingPeople) {
             System.out.println(person);
